@@ -841,12 +841,25 @@ footer {
         margin-right: auto;
     }
 
-    .hero-buttons, .stats {
+    .hero-buttons {
         justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .stats {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
     }
 
     .hero h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
+    }
+
+    .hero-graphic {
+        transform: scale(0.8);
+        height: 400px;
+        margin-top: -2rem;
     }
     
     .nav-links {
@@ -860,5 +873,40 @@ footer {
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+        text-align: center;
+    }
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .footer-col ul li {
+        justify-content: center;
+    }
+
+    .checkout-container, .admin-container {
+        padding: 0 1.5rem;
+        margin-top: 6rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-graphic {
+        transform: scale(0.65);
+    }
+    
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .courses-grid, .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-item h3 {
+        font-size: 1.5rem;
     }
 }
