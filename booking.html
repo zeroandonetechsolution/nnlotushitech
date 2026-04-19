@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout | NN Lotus Hi-Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .checkout-container {
+            max-width: 1000px;
+            margin: 10rem auto 4rem;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .checkout-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(12px);
+        }
+
+        .checkout-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .order-summary {
+            background: rgba(0,0,0,0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .summary-total {
+            border-top: 1px dashed var(--border-glass);
+            padding-top: 1rem;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-pink);
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .pm-card {
+            flex: 1;
+            border: 1px solid var(--border-glass);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .pm-card.active {
+            border-color: var(--primary-blue);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        #success-message {
+            display: none;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        .success-icon {
+            font-size: 5rem;
+            color: #10b981;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-lotus"></i></div>
+                <span>NN Lotus <span class="highlight">Hi-Tech</span></span>
+            </a>
+            <a href="index.html" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="checkout-container" id="checkout-form-container">
+        <!-- Order Summary -->
+        <div class="checkout-card" style="height: fit-content;">
+            <div class="checkout-header">
+                <h2>Order <span class="gradient-text">Summary</span></h2>
+            </div>
+            
+            <div id="selected-booking" class="order-summary">
+                <div class="summary-row">
+                    <span style="color: var(--text-muted)">Type:</span>
+                    <strong id="booking-type">-</strong>
+                </div>
+                <div class="summary-row">
+                    <span style="color: var(--text-muted)">Selection:</span>
+                    <strong id="booking-name">-</strong>
+                </div>
+                <div class="summary-row summary-total">
+                    <span>Total Amount:</span>
+                    <span id="booking-price">₹0</span>
+                </div>
+            </div>
+
+            <div class="secure-badge" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: #10b981; margin-top: 2rem;">
+                <i class="fa-solid fa-lock"></i> 100% Secure Encrypted Transaction
+            </div>
+        </div>
+
+        <!-- Checkout Form -->
+        <div class="checkout-card">
+            <div class="checkout-header">
+                <h2>Billing <span class="gradient-text">Details</span></h2>
+            </div>
+            
+            <form id="checkout-form" onsubmit="processPayment(event)">
+                <input type="hidden" id="hidden-price" value="">
+                <input type="hidden" id="hidden-type" value="">
+                <input type="hidden" id="hidden-name" value="">
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>WhatsApp Number</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="+91 98765 43210" required>
+                </div>
+
+                <div class="form-group" style="margin-top: 2rem;">
+                    <label>Select Payment Method</label>
+                    <div class="payment-methods">
+                        <div class="pm-card active"><i class="fa-brands fa-google-pay" style="font-size:1.5rem"></i><br>UPI</div>
+                        <div class="pm-card"><i class="fa-solid fa-credit-card" style="font-size:1.5rem"></i><br>Card</div>
+                        <div class="pm-card"><i class="fa-solid fa-building-columns" style="font-size:1.5rem"></i><br>Bank</div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100" style="font-size: 1.1rem; padding: 1rem;">
+                    Pay <span id="total-amount"></span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="checkout-container" style="display: block;">
+        <div class="checkout-card" id="success-message">
+            <i class="fa-solid fa-circle-check success-icon"></i>
+            <h2>Payment Successful!</h2>
+            <p style="color: var(--text-muted); margin: 1.5rem 0;">Thank you for choosing NN Lotus Hi-Tech. Your payment has been securely processed and your booking is confirmed.</p>
+            <div style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 10px; display: inline-block; margin-bottom: 2rem;">
+                Booking Reference: <br><strong id="order-id-display" style="font-size: 1.5rem; color: var(--primary-blue);"></strong>
+            </div>
+            <br>
+            <a href="index.html" class="btn btn-nav">Return to Home</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

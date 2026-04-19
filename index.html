@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NN Lotus Hi-Tech | IT Solutions & Training</title>
+    <meta name="description" content="Empowering brands with digital marketing, web development, and IT solutions that deliver real results. Let's grow your business the smart way.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-lotus"></i>
+                </div>
+                <span>NN Lotus <span class="highlight">Hi-Tech</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#services">IT Services</a>
+                <a href="#courses">Training Courses</a>
+                <a href="booking.html" class="btn btn-nav">Book Now / Pay</a>
+                <a href="admin.html" class="admin-link"><i class="fa-solid fa-lock"></i></a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-particles"></div>
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <div class="badge">Innovation Meets Excellence</div>
+            <h1>Empowering Brands with <br><span class="gradient-text">Digital Mastery</span></h1>
+            <p>From cutting-edge web development and digital marketing to empowering skill development programs. Let's grow your business the smart way.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary">Our IT Solutions</a>
+                <a href="#courses" class="btn btn-secondary">Explore Courses</a>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1000+</h3>
+                    <p>Students Trained</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Client Satisfaction</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-graphic" data-aos="fade-left" data-aos-duration="1200">
+            <div class="glass-card main-card">
+                <i class="fa-solid fa-code icon-large blue"></i>
+                <h3>Web Development</h3>
+                <div class="progress-bar"><div class="fill" style="width: 85%"></div></div>
+            </div>
+            <div class="glass-card small-card float-1">
+                <i class="fa-solid fa-bullhorn icon-medium pink"></i>
+                <h4>Digital Marketing</h4>
+            </div>
+            <div class="glass-card small-card float-2">
+                <i class="fa-solid fa-graduation-cap icon-medium purple"></i>
+                <h4>Skill Training</h4>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section (IT Solutions) -->
+    <section id="services" class="section services">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Premium IT <span class="gradient-text">Solutions</span></h2>
+            <p>We deliver real results through cutting-edge technology and strategic digital marketing.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>Web & App Development</h3>
+                <p>Custom, responsive websites and powerful mobile applications designed to convert visitors into loyal customers.</p>
+                <button class="btn btn-outline" onclick="initiateBooking('IT Service', 'Web & App Development', 25000)">Enquire Now</button>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon pink-bg"><i class="fa-solid fa-chart-line"></i></div>
+                <h3>Digital Marketing</h3>
+                <p>SEO, Social Media Marketing, and PPC campaigns that drive targeted traffic and maximize your ROI.</p>
+                <button class="btn btn-outline" onclick="initiateBooking('IT Service', 'Digital Marketing Monthly', 15000)">Enquire Now</button>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon purple-bg"><i class="fa-solid fa-bezier-curve"></i></div>
+                <h3>Graphic & UI/UX Design</h3>
+                <p>Stunning brand identities, logos, and user interfaces that create memorable experiences.</p>
+                <button class="btn btn-outline" onclick="initiateBooking('IT Service', 'Design & Branding', 10000)">Enquire Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Animated Diagram Section -->
+    <section id="workflow" class="section workflow">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Our Proven <span class="gradient-text">Workflow</span></h2>
+            <p>How we transform your ideas into reality through a structured, strategic process.</p>
+        </div>
+        <div class="workflow-container">
+            <div class="workflow-step" data-aos="zoom-in" data-aos-delay="100">
+                <div class="step-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <div class="step-content">
+                    <h3>1. Ideation</h3>
+                    <p>Strategy & Planning</p>
+                </div>
+            </div>
+            
+            <div class="workflow-line" data-aos="fade-in" data-aos-delay="300">
+                <div class="line-fill"></div>
+                <div class="moving-dot"></div>
+            </div>
+            
+            <div class="workflow-step" data-aos="zoom-in" data-aos-delay="500">
+                <div class="step-icon blue-bg"><i class="fa-solid fa-code"></i></div>
+                <div class="step-content">
+                    <h3>2. Build</h3>
+                    <p>Design & Develop</p>
+                </div>
+            </div>
+            
+            <div class="workflow-line" data-aos="fade-in" data-aos-delay="700">
+                <div class="line-fill" style="animation-delay: 1.5s;"></div>
+                <div class="moving-dot" style="animation-delay: 1.5s;"></div>
+            </div>
+            
+            <div class="workflow-step" data-aos="zoom-in" data-aos-delay="900">
+                <div class="step-icon pink-bg"><i class="fa-solid fa-rocket"></i></div>
+                <div class="step-content">
+                    <h3>3. Launch</h3>
+                    <p>Deploy & Grow</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section courses">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Skill Development <span class="gradient-text">Programs</span></h2>
+            <p>Empowering the next generation with future-ready skills. Admissions Open!</p>
+        </div>
+        <div class="courses-grid">
+            <!-- Kids Summer Camp -->
+            <div class="course-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="course-badge discount">66% OFF</div>
+                <div class="course-image summer-camp-bg">
+                    <h3>Kids Summer Camp</h3>
+                </div>
+                <div class="course-content">
+                    <div class="course-meta">
+                        <span><i class="fa-solid fa-users"></i> Class 5 to 8</span>
+                        <span><i class="fa-regular fa-clock"></i> Starts May</span>
+                    </div>
+                    <h4>Future Tech Innovators Camp</h4>
+                    <ul class="course-features">
+                        <li><i class="fa-solid fa-check"></i> Future PC Wizards & Little AI Genius</li>
+                        <li><i class="fa-solid fa-check"></i> Code with Python</li>
+                        <li><i class="fa-solid fa-check"></i> Web & Graphic Design Basics</li>
+                    </ul>
+                    <div class="price-container">
+                        <span class="old-price">₹4,500</span>
+                        <span class="new-price">₹1,499</span>
+                    </div>
+                    <button class="btn btn-primary w-100" onclick="initiateBooking('Course', 'Kids Summer Camp', 1499)">Book Seat & Pay</button>
+                </div>
+            </div>
+
+            <!-- Women's Skill Development -->
+            <div class="course-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="course-badge exclusive">Exclusive</div>
+                <div class="course-image womens-program-bg">
+                    <h3>Women's Program</h3>
+                </div>
+                <div class="course-content">
+                    <div class="course-meta">
+                        <span><i class="fa-solid fa-venus"></i> Women Only</span>
+                        <span><i class="fa-regular fa-calendar-check"></i> Limited Seats</span>
+                    </div>
+                    <h4>Advanced Media & Design Mastery</h4>
+                    <ul class="course-features">
+                        <li><i class="fa-solid fa-check"></i> Graphic Design (Photoshop, AI, Canva)</li>
+                        <li><i class="fa-solid fa-check"></i> Video Editing (Premiere Pro, After Effects)</li>
+                        <li><i class="fa-solid fa-check"></i> Professional Certification</li>
+                    </ul>
+                    <div class="price-container">
+                        <span class="old-price">₹15,000</span>
+                        <span class="new-price">₹9,500</span>
+                    </div>
+                    <button class="btn btn-primary w-100" onclick="initiateBooking('Course', 'Women\'s Skill Program', 9500)">Book Seat & Pay</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo">
+                     <i class="fa-solid fa-lotus" style="color: var(--pink)"></i>
+                     <span>NN Lotus Hi-Tech</span>
+                </div>
+                <p>Empowering brands and individuals with premium IT solutions and cutting-edge skill development programs.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#services">IT Services</a></li>
+                    <li><a href="#courses">Training Programs</a></li>
+                    <li><a href="booking.html">Book & Pay</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fa-solid fa-envelope"></i> info@nnlotushitech.com</li>
+                    <li><i class="fa-solid fa-phone"></i> +91 98765 43210</li>
+                    <li><i class="fa-brands fa-instagram"></i> @nnlotushitech</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NN Lotus Hi-Tech. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 50
+        });
+    </script>
+</body>
+</html>
